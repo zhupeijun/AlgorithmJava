@@ -62,3 +62,5 @@ content = import_code + content
 # output source code to out directory
 with open(OUT_FILE, "w") as f:
     f.write(content)
+
+print("Generated.")
