@@ -1,26 +1,26 @@
 package library.algorithm;
 
 public class Seg {
-    long[] data, datb;
-    int n;
+    private long[] data, datb;
+    private int n;
 
-    Seg(int m) {
+    public Seg(int m) {
         n = 1;
         while (n < m) n *= 2;
         data = new long[n * 2];
         datb = new long[n * 2];
     }
 
-    void add(int a, int b, long x) {
+    public void add(int a, int b, long x) {
         add(a, b, x, 0, 0, n);
     }
 
-    long sum(int a, int b) {
+    public long sum(int a, int b) {
 
         return sum(a, b, 0, 0, n);
     }
 
-    void add(int a, int b, long x, int k, int l, int r) {
+    public void add(int a, int b, long x, int k, int l, int r) {
         if (a <= l && r <= b) {
             data[k] += x;
         } else if (l < b && a < r) {
@@ -30,7 +30,7 @@ public class Seg {
         }
     }
 
-    long sum(int a, int b, int k, int l, int r) {
+    public long sum(int a, int b, int k, int l, int r) {
         if (b <= l || r <= a) {
             return 0;
         } else if (a <= l && r <= b) {

@@ -4,12 +4,12 @@ public class BIT {
     int[] dat;
     int n;
 
-    BIT(int n) {
+    public BIT(int n) {
         this.n = n;
         this.dat = new int[n + 1];
     }
 
-    int sum(int i) {
+    public int sum(int i) {
         int s = 0;
         while (i > 0) {
             s += dat[i];
@@ -18,7 +18,7 @@ public class BIT {
         return s;
     }
 
-    void add(int i, int x) {
+    public void add(int i, int x) {
         while (i <= n) {
             dat[i] += x;
             i += (i & -i);
