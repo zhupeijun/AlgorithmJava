@@ -9,6 +9,7 @@ public class Main {
     private static final boolean N_CASE = false;
 
     private void solve() {
+        
     }
 
     private void run() {
@@ -25,6 +26,7 @@ public class Main {
     public static void main(String[] args) {
         out = new MyWriter(new BufferedOutputStream(System.out));
         sc = new MyScanner();
+        cu = new CommonUtils();
         new Main().run();
         out.close();
     }

@@ -23,11 +23,8 @@ if [[ -e "Main.java" ]]; then
   exit 1
 fi
 
-# copy template to current directory
-cp $TEMP_PATH ./
-
-# replace package name
-sed -i -e "s|\\\$PACKAGE_NAME\\\$|$PKG_NAME|g" Main.java
+# replace package name and create a new file
+cat $TEMP_PATH | sed -e "s|\\\$PACKAGE_NAME\\\$|$PKG_NAME|g" > Main.java
 
 echo "Created."
 
