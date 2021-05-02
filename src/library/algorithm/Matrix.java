@@ -3,14 +3,14 @@ package library.algorithm;
 import library.algorithm.Mint;
 
 public class Matrix {
-	private Mint Mt;
+    private Mint Mt;
 
-	public Matrix(Mint mt) {
-		this.Mt = mt;
-	}
+    public Matrix(Mint mt) {
+        this.Mt = mt;
+    }
 
-	public long[] mul(long[] a, long[][] b) {
-		int N = a.length;
+    public long[] mul(long[] a, long[][] b) {
+        int N = a.length;
         long[] ret = new long[N];
         for (int i = 0; i < N; ++i) {
             for (int j = 0; j < N; ++j) {
@@ -21,11 +21,11 @@ public class Matrix {
     }
 
     public long[][] mul(long[][] a, long[][] b) {
-    	int A = a.length;
-    	int B = b.length == 0 ? 0 : b[0].length;
-    	int C = A == 0 ? 0 : a[0].length;
+        int A = a.length;
+        int B = b.length == 0 ? 0 : b[0].length;
+        int C = A == 0 ? 0 : a[0].length;
 
-		long[][] ret = new long[A][B];
+        long[][] ret = new long[A][B];
         for (int r = 0; r < A; ++r) {
             for (int c = 0; c < B; ++c) {
                 for (int i = 0; i < C; ++i) {
@@ -37,7 +37,7 @@ public class Matrix {
     }
 
     public long[][] pow(long[][] a, int n) {
-    	int N = a.length;
+        int N = a.length;
         long[][] ret = new long[N][N];
         unit(ret);
 
@@ -52,26 +52,26 @@ public class Matrix {
     }
 
     public void copy(long[][] a, long[][] b) {
-    	int N = a.length;
-    	int M = N == 0 ? 0 : a[0].length;
-    	for (int i = 0; i < N; ++i) {
-    		for (int j = 0; j < M; ++j) {
-    			b[i][j] = a[i][j];
-    		}
-    	}
+        int N = a.length;
+        int M = N == 0 ? 0 : a[0].length;
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < M; ++j) {
+                b[i][j] = a[i][j];
+            }
+        }
     }
 
     public void unit(long[][] a) {
-    	int N = a.length;
-    	for (int i = 0; i < N; ++i) {
-    		a[i][i] = 1;
-    	}
+        int N = a.length;
+        for (int i = 0; i < N; ++i) {
+            a[i][i] = 1;
+        }
     }
 
     public void set(long[][] a, long val) {
-    	int N = a.length;
-    	for (int i = 0; i < N; ++i) {
-    		Arrays.fill(a[i], val);
-    	}
+        int N = a.length;
+        for (int i = 0; i < N; ++i) {
+            Arrays.fill(a[i], val);
+        }
     } 
 }
