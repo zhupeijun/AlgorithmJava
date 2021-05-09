@@ -1,6 +1,6 @@
 package library.algorithm;
 
-import library.algorithm.Mint;
+import java.util.*;
 
 public class Matrix {
     private Mint Mt;

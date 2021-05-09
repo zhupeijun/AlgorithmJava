@@ -14,6 +14,10 @@ public class Mint {
         modVal = () -> MOD;
     }
 
+    public Mint(Supplier<Integer> modVal) {
+        this.modVal = modVal;
+    }
+
     public long add(long a, long b) { return (((a + b) % mod() + mod()) % mod());}
     public long sub(long a, long b) { return (((a - b) % mod() + mod()) % mod()); }
     public long mul(long a, long b) { return (((a * b) % mod() + mod()) % mod()); }
@@ -30,6 +34,6 @@ public class Mint {
     }
     
     private int mod() {
-        return modVal.getAsInt();
+        return modVal.get();
     }
 }
