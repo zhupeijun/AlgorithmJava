@@ -6,10 +6,18 @@ import java.util.*;
 import library.basic.*;
 
 public class Main {
-    private static final boolean N_CASE = false;
+    private static final boolean N_CASE = true;
 
     private void solve() {
+        int L = sc.nextInt();
+        int R = sc.nextInt();
 
+        long t = R - 2L * L + 1;
+        long ans = 0;
+        if (t >= 0) {
+            ans = (1 + t) * t / 2;
+        }
+        out.println(ans);
     }
 
     private void run() {
@@ -26,6 +34,7 @@ public class Main {
     public static void main(String[] args) {
         out = new MyWriter(new BufferedOutputStream(System.out));
         sc = new MyScanner();
+        cu = new CommonUtils();
         new Main().run();
         out.close();
     }

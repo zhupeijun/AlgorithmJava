@@ -1,20 +1,17 @@
 package library.algorithm;
 
-import java.util.function.IntSupplier;
+import java.util.function.*;
 
 public class Mint {
-    private final static int DEFAULT = 1000_000_007;
-    private IntSupplier modVal = () -> DEFAULT;
+    private static final int DEFAULT = 1000_000_007;
+    private Supplier<Integer> modVal;
 
     public Mint() {
+        modVal = () -> DEFAULT;
     }
 
-    public Mint(int value) {
-        this.modVal = () -> value;
-    }
-    
-    public Mint(IntSupplier modVal) {
-        this.modVal = modVal;
+    public Mint(int MOD) {
+        modVal = () -> MOD;
     }
 
     public long add(long a, long b) { return (((a + b) % mod() + mod()) % mod());}

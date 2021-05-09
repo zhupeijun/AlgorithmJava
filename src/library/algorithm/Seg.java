@@ -1,8 +1,8 @@
 package library.algorithm;
 
 public class Seg {
-    long[] data, datb;
-    int n;
+    private long[] data, datb;
+    private int n;
 
     public Seg(int m) {
         n = 1;

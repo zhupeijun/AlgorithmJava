@@ -8,9 +8,10 @@ import library.basic.*;
 public class Main {
     private static final boolean N_CASE = true;
 
-    private long need(long p, long a) {
-        if (p % a == 0) return 0;
-        else return p / a * a + a - p;
+    private long need(long x, long p) {
+        long n = p / x;
+        n = n * x < p ? n + 1 : n;
+        return n * x - p;
     }
 
     private void solve() {
@@ -19,10 +20,9 @@ public class Main {
         long b = sc.nextLong();
         long c = sc.nextLong();
 
-        long ans = Long.MAX_VALUE;
-        ans = Math.min(ans, need(p, a));
-        ans = Math.min(ans, need(p, b));
-        ans = Math.min(ans, need(p, c));
+        long ans = need(a, p);
+        ans = Math.min(ans, need(b, p));
+        ans = Math.min(ans, need(c, p));
         out.println(ans);
     }
 
@@ -40,6 +40,7 @@ public class Main {
     public static void main(String[] args) {
         out = new MyWriter(new BufferedOutputStream(System.out));
         sc = new MyScanner();
+        cu = new CommonUtils();
         new Main().run();
         out.close();
     }

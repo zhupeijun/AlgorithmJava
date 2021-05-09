@@ -8,8 +8,13 @@ if [ "$PROJ_ROOT" == "" ]; then
   exit 1
 fi
 
+# if no file specified, the default is Main.java
+if [[ "$SRC_FILE" == "" ]]; then
+  SRC_FILE="Main.java"
+fi
+
 # check if source file exist
-if [[ "$SRC_FILE" == "" || ! -e "$SRC_FILE" ]]; then
+if [[ ! -e "$SRC_FILE" ]]; then
   echo "Source file not found."
   exit 1
 fi
