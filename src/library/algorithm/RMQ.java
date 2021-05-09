@@ -11,11 +11,19 @@ public class RMQ {
         for (int i = 0; i < 2 * n - 1; ++i) dat[i] = 0;
     }
 
+    public void replace(int k, int a) {
+        update(k, a, true);
+    }
+
     public void update(int k, long a) {
+        update(k, a, false);
+    }
+
+    private void update(int k, long a, boolean replace) {
         k += n - 1;
         // use this if need keep max value
         // data[k] = Math.max(dat[k], a);
-        dat[k] = a;
+        dat[k] = replace ? a : Math.max(dat[k], a);
         while (k > 0) {
             k = (k - 1) / 2;
             dat[k] = Math.max(dat[k * 2 + 1], dat[k * 2 + 2]);
