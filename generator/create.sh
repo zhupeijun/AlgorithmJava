@@ -4,7 +4,7 @@
 set -eu
 
 # setup common variables
-PROJ_ROOT=$MY_ALGO_ROOT
+PROJ_ROOT=${MY_ALGO_ROOT}
 CUR_DIR=`pwd`
 TEMP_PATH="$PROJ_ROOT/generator/Main.java"
 
@@ -14,6 +14,13 @@ if [[ ! "$CUR_DIR" =~ "src" ]]; then
   exit 1
 fi
 
+# if specified folder name, create the folder
+FOLDER=$1
+if [[ -n "$FOLDER" ]]; then
+  mkdir $FOLDER
+  cd $FOLDER
+fi
+
 # construct package name
 PKG_NAME=`echo $CUR_DIR | sed -e "s/.*\/src\///g" | sed -e "s/\//./g"`
 
@@ -21,13 +28,6 @@ PKG_NAME=`echo $CUR_DIR | sed -e "s/.*\/src\///g" | sed -e "s/\//./g"`
 if [[ -e "Main.java" ]]; then
   echo "[ERROR] File already exist."
   exit 1
-fi
-
-# if specified folder name, create the folder
-FOLDER=$1
-if [[ -n "$FOLDER" ]]; then
-  mkdir $FOLDER
-  cd $FOLDER
 fi
 
 # replace package name and create a new file

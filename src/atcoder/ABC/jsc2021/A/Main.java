@@ -1,4 +1,4 @@
-package atcoder.ABC.jsc2021;
+package atcoder.ABC.jsc2021.A;
 
 import java.io.*;
 import java.util.*;

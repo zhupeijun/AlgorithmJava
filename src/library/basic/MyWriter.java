@@ -35,14 +35,13 @@ public class MyWriter extends PrintWriter {
         }
     }
 
-    public <T> void print(List<T> list) {
+    public void print(List<Integer> list) {
         for (int i = 0; i < list.size(); ++i) {
             print(list.get(i));
             print(i == list.size() - 1 ? '\n' : ' ');
         }
     }
-
-    public <T> void println(List<T> list) {
+    public void println(List<Integer> list) {
         list.forEach(this::println);
     }
 }

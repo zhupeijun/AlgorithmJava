@@ -22,4 +22,12 @@ public class CommonUtils {
     public void fill(int[] a, int value) {
         Arrays.fill(a, value);
     }
+
+    public void swap(List<Integer> a, int i, int j) {
+        int t = a.get(i); a.set(i, a.get(j)); a.set(j, t);
+    }
+
+    public void swap(int[] a, int i, int j) {
+        int t = a[i]; a[i] = a[j]; a[j] = t;
+    }
 }

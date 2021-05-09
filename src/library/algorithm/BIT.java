@@ -18,6 +18,7 @@ public class BIT {
         return s;
     }
 
+    // i start from 1
     public void add(int i, int x) {
         while (i <= n) {
             dat[i] += x;

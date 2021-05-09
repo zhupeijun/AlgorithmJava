@@ -1,4 +1,4 @@
-package atcoder.ABC.zone2021;
+package atcoder.ABC.zone2021.C;
 
 import java.io.*;
 import java.util.*;
