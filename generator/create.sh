@@ -4,7 +4,7 @@
 set -eu
 
 # setup common variables
-PROJ_ROOT=$MY_ALGO_ROOT
+PROJ_ROOT=${MY_ALGO_ROOT}
 CUR_DIR=`pwd`
 TEMP_PATH="$PROJ_ROOT/generator/Main.java"
 

@@ -3,7 +3,7 @@ import os
 import re
 
 PROJECT_ROOT=os.getcwd()
-OUR_DIR=PROJECT_ROOT+"/out";
+OUR_DIR=PROJECT_ROOT+"/out"
 OUT_FILE=OUR_DIR+"/Main.java"
 LIB_DIR=PROJECT_ROOT+"/src/library"
 LIB_BASIC_DIR=LIB_DIR+"/basic"
@@ -56,7 +56,11 @@ content = re.sub(r'import [\w\.\*]+;\n', "", content)
 content = content.strip()
 
 # add normal import
-import_code = "import java.io.*;\nimport java.util.*;\n\n"
+import_code = ( "import java.io.*;\n"
+                "import java.util.*;\n"
+                "import java.util.function.*;\n"
+                "\n")
+
 content = import_code + content
 
 # output source code to out directory
