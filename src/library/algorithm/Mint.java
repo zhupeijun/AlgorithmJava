@@ -18,6 +18,7 @@ public class Mint {
         this.modVal = modVal;
     }
 
+    public long get(long a) { return a % mod(); }
     public long add(long a, long b) { return (((a + b) % mod() + mod()) % mod());}
     public long sub(long a, long b) { return (((a - b) % mod() + mod()) % mod()); }
     public long mul(long a, long b) { return (((a * b) % mod() + mod()) % mod()); }

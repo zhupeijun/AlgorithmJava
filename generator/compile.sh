@@ -18,9 +18,12 @@ sh $PROJ_ROOT/generator/generate.sh
 OUT_DIR=$PROJ_ROOT/out
 cd $OUT_DIR
 
+# clear .class file
+[ -n "$(find . -maxdepth 1 -name '*.class' -print -quit)" ] && rm *.class
+
 # compile
 javac Main.java
 echo "Compile succeed."
 
 # run
-java Main
+# java Main

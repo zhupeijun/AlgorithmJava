@@ -17,13 +17,17 @@ public class MyScanner {
 
     public String next() {
         while (st == null || !st.hasMoreElements()) {
-            try {
-                st = new StringTokenizer(br.readLine());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            st = new StringTokenizer(nextLine());
         }
         return st.nextToken();
+    }
+
+    public String nextLine() {
+        try {
+            return br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int nextInt() {
